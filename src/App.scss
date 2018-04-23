@@ -1,0 +1,56 @@
+.step,
+.result {
+    margin: 15px;
+    border: 1px solid #000;
+    padding: 15px;
+    width: 450px;
+    height: 300px;
+}
+
+.step {
+    table {
+        border: 1px solid #000;
+    }
+}
+
+input {
+    width: 50px;
+}
+
+h5,
+p {
+    margin: 0px;
+}
+
+
+
+fieldset {
+    max-width: 800px;
+}
+
+.dNone {
+    display: none;
+}
+
+.view {
+    display: block;
+}
+
+.step,
+.result {
+    display: none
+}
+
+.view,
+    {
+    &.result {
+        display: block;
+    }
+    &.step {
+        display: block;
+    }
+}
+
+.nextStep {
+    float: right;
+}
