@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
+import Step1 from './Components/Step1';
 
-class App extends Component {
-  render(renderApp=this.props.renderApp) {
-    return renderApp;
-  }
-  static nextStep(begin = ".step1" , target = ".step2") {
-    console.log(begin, target);
-    
-      
+export default class App extends Component {
+  render() {
+    return (
+      <section className="box">
+        <Step1/>
+      </section>
+    )
   }
 }
-
-export default App;

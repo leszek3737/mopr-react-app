@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Step1 from './Components/Step1';
 
 window.__data__ = {
     dps: [{
@@ -56,17 +55,6 @@ window.__data__ = {
         },
     ],
 }
-const dpsList = window.__data__.dps;
-let button = {
-    className: "nextStep",
-    lebel: "dalej"
-}
-let renderApp = (
-<section className="box">
-    <Step1 dpsList={dpsList} button={button} legend="Wybierz dom pomocy społecznej"/>
-</section>
-)
 
-ReactDOM.render(<App renderApp={renderApp} />, document.getElementById('root'));
-// ReactDOM.render(<Step1 dpsList={dpsList} button={button} legend="Wybierz dom pomocy społecznej" />, document.querySelector('.box'));
+ReactDOM.render(<App />, document.querySelector("#root"));
 registerServiceWorker();

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 export default class SelectOptionsItems extends Component {
-  render(data = this.props.button) {
+  render(data = this.props) {
         return React.createElement("button", {
           className: data.className,
           id: data.id,
