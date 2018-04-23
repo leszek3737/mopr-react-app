@@ -59,7 +59,7 @@ window.__data__ = {
 
 let renderApp = (
 <section className="box">
-    {/* <Step1 dpsList={dpsList} button={button} legend="Wybierz dom pomocy społecznej"/> */}
+    <Step1 dpsList={dpsList} button={button} legend="Wybierz dom pomocy społecznej"/>
 </section>
 )
 
