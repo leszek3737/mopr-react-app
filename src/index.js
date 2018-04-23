@@ -56,7 +56,11 @@ window.__data__ = {
         },
     ],
 }
-
+const dpsList = window.__data__.dps;
+let button = {
+    className: "nextStep",
+    lebel: "dalej"
+}
 let renderApp = (
 <section className="box">
     <Step1 dpsList={dpsList} button={button} legend="Wybierz dom pomocy społecznej"/>
