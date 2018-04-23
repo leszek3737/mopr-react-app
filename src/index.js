@@ -54,6 +54,19 @@ window.__data__ = {
             mustBeUnique: false,
         },
     ],
+    odp: {
+        cost: {
+            dps: 0,
+            mieszkaniec: 0,
+            gminy: 0,
+        },
+        licz: 0,
+        rodzi: [], // rodzaj rodziny pobrany z pola
+        odplRo: [], // odpłatność dansej rodziny 
+        iloscRo: [], // ilość osób w danej rodzinie
+        rod: [], //odpłatnośc na wszyskich poziomach (pobrane odpRo)
+        licznik: [], // ilość rodzin w poszczegulnych grupach 
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector("#root"));

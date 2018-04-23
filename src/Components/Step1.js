@@ -3,8 +3,20 @@ import SelectOptionsItems from './Utils/SelectOptionsItems';
 import Button from './Utils/Button';
 
 export default class Step1 extends Component {
-  actionNexStep() {
-    console.log("aaa")
+  state = {
+    value: 0,
+  }
+  static actionNextStep = () => {
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      value: event.target.value
+    })
+  }
+  
+  componentWillUnmount(){
+    window.__data__.odp.cost.dps = window.__data__.dps[this.state.value].koszt
   }
   render() {
     let data = {
@@ -12,27 +24,26 @@ export default class Step1 extends Component {
       button: {
         className: "nextStep",
         lebel: "dalej",
-        click: this.actionNexStep
+        click: this.actionNextStep,
       },
-      legend: "Wybierz dom pomocy społecznej"
+      legend: "Wybierz dom pomocy społecznej",
+      onChange: this.actionSelectDps,
     }
     return (
-        <div className="step1">
-          <legend>{data.legend}
-          </legend>
-          <fieldset className="dps">
-            <select className="dps">
-              <SelectOptionsItems 
-                list={data.dpsList}/>
-            </select>
+      <div className="step1">
+        <legend>{data.legend}
+        </legend>
+        <fieldset className="dps">
+          <select className="dps" onChange={this.handleChange}>
+            <SelectOptionsItems list={data.dpsList}/>
+          </select>
 
-          </fieldset>
-          <Button
-            className={data.button.className}
-            lebel={data.button.lebel}
-            click={data.button.click}/>
-        </div>
+        </fieldset>
+        <Button
+          className={data.button.className}
+          lebel={data.button.lebel}
+          click={data.button.click}/>
+      </div>
     );
   }
 }
-
