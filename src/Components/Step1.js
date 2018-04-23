@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import App from '../App';
 import SelectOptionsItems from './Utils/SelectOptionsItems';
 import Button from './Utils/Button';
 
@@ -6,8 +8,7 @@ export default class Step1 extends Component {
   state = {
     value: 0,
   }
-  static actionNextStep = () => {
-  }
+  actionNextStep = () => {window.app.view.step2()}
 
   handleChange = (event) => {
     this.setState({
@@ -27,7 +28,6 @@ export default class Step1 extends Component {
         click: this.actionNextStep,
       },
       legend: "Wybierz dom pomocy społecznej",
-      onChange: this.actionSelectDps,
     }
     return (
       <div className="step1">

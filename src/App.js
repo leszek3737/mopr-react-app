@@ -1,13 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import Step1 from './Components/Step1';
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
-    return (
-      <section className="box">
-        <Step1/>
-      </section>
-    )
+    return this.props.step
   }
 }
