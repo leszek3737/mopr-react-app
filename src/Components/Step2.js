@@ -11,7 +11,7 @@ export default class Step2 extends Component {
     window
       .app 
       .view
-      .start()
+      .step3()
   }
 
   handleChange = (event) => {
@@ -26,7 +26,7 @@ export default class Step2 extends Component {
       button: {
         className: "nextStep",
         lebel: "dalej",
-        click: this.actionNextStep
+        click: this.actionNextStep,
       },
       legend: "Krok 2 -Podaj przychód netto",
       input: {

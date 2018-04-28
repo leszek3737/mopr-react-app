@@ -8,7 +8,9 @@ export default class Input extends Component {
           className: data.className,
           id: data.id,
           value: data.value,
-          onClick: data.click
+          name: data.name,
+          onClick: data.click,
+          defaultChecked: data.checked,
         }, data.lebel)
   }
 }
