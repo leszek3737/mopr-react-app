@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
 import SelectOptionsItems from './Utils/SelectOptionsItems';
 import Button from './Utils/Button';
+import mainData from "../data"
+import DpsInfo from "./DpsInfo"
 
 export default class Step1 extends Component {
   state = {
@@ -15,13 +15,12 @@ export default class Step1 extends Component {
       value: event.target.value
     })
   }
-  
   componentWillUnmount(){
-    window.__data__.odp.cost.dps = window.__data__.dps[this.state.value].koszt
-  }
+//    mainData.odp.cost.dps = mainData.dps[this.state.value].koszt
+   }
   render() {
     let data = {
-      dpsList: window.__data__.dps,
+      dpsList: mainData.dps,
       button: {
         className: "nextStep",
         lebel: "dalej",
@@ -43,6 +42,7 @@ export default class Step1 extends Component {
           className={data.button.className}
           lebel={data.button.lebel}
           click={data.button.click}/>
+         <DpsInfo value={this.state.value}/>
       </div>
     );
   }

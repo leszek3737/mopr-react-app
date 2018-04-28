@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
-import SelectOptionsItems from './Utils/SelectOptionsItems';
 import Button from './Utils/Button';
 import Input from './Utils/Input';
+// import mainData from "../data"
 
 export default class Step2 extends Component {
   state = {
@@ -11,19 +9,17 @@ export default class Step2 extends Component {
   }
   actionNextStep = () => {
     window
-      .app
+      .app 
       .view
       .start()
   }
 
   handleChange = (event) => {
-    //do odzielenie do logiki 
-    let data = Math.round(0.7 * event.target.value * 100) / 100;
-    this.setState({value: data})
+    this.setState({value: event.target.value})
   }
 
   componentWillUnmount() {
-    window.__data__.odp.cost.mieszkaniec = this.state.value
+//    mainData.odp.cost.mieszkaniec = this.state.value
   }
   render() {
     let data = {
