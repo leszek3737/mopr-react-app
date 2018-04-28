@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Button from './Utils/Button';
-import Input from './Utils/Input';
+// import Input from './Utils/Input';
 import FamilyMember from './FamilyMember';
-// import mainData from "../data"
+import mainData from "../data"
 
 export default class Step4 extends Component {
   state = {
@@ -22,20 +22,7 @@ export default class Step4 extends Component {
 
   componentWillUnmount() {}
   render() {
-    let data = {
-      button: {
-        className: "nextStep",
-        lebel: "dalej",
-        click: this.actionNextStep
-      },
-      legend: "step 3 - Czy mieszkaniec posiada żyjącą rodzinę ?(żonę, dzieci, wnuki, rodziców," +
-          " dziadków itd.)",
-      input: {
-        type: "radio",
-        id: "dochMiesz",
-        name: "family"
-      }
-    }
+    const list = mainData.kinshipDegree
     return (
       <div className="step3">
         <table>
@@ -46,7 +33,7 @@ export default class Step4 extends Component {
               <th>łączny przychód gospodarstwa domowego</th>
               <th></th>
             </tr>
-            <FamilyMember value="0"/>
+            <FamilyMember value="0" list={list}/>
           </tbody>
         </table>
         <Button

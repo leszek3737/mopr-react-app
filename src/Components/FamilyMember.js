@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import Button from './Utils/Button';
 import Input from './Utils/Input';
 import mainData from "../data"
-
 import SelectOptionsItems from './Utils/SelectOptionsItems';
-export default class Step4 extends Component {
+
+export default class FamilyMember extends Component {
   state = {
     value: this.props.value,
-    date: 0,
+    kinshipDegree: 0,
   }
   actionNextStep = () => {
     window
@@ -25,13 +25,13 @@ export default class Step4 extends Component {
 
   componentWillUnmount() {}
   render() {
-    console.log(this.state.data)
+    const list = this.props.list
+    console.log(list)
     return (
-        
       <tr>
         <td>
         <select onChange={this.handleChange}>
-            <SelectOptionsItems list={mainData.kinshipDegree}/>
+            <SelectOptionsItems list={list}/>
           </select>
         </td>
         <td>
@@ -43,7 +43,11 @@ export default class Step4 extends Component {
             onChange={this.handleChange}/>
         </td>
         <td>
-          <Button />
+          <Button 
+          className={"removeFamilyMemberBtn"}
+          lebel={"usuń"}
+        //   click={this.actionNextStep}
+          />
         </td>
       </tr>
     );

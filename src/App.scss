@@ -37,6 +37,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+tr, th, td{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 50%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 
 .box {
     margin: 15px;
