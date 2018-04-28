@@ -3,7 +3,7 @@ import Button from './Utils/Button';
 import Input from './Utils/Input';
 // import mainData from "../data"
 
-export default class Step2 extends Component {
+export default class Step3 extends Component {
   state = {
     value: 0
   }
@@ -11,7 +11,7 @@ export default class Step2 extends Component {
     window
       .app 
       .view
-      .start()
+      .step4()
   }
 
   handleChange = (event) => {

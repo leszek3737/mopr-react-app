@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Step1 from "./Components/Step1"
 import Step2 from "./Components/Step2"
 import Step3 from "./Components/Step3"
+import Step4 from "./Components/Step4"
 
 
 window.app = {
@@ -36,7 +37,16 @@ window.app = {
       );
       return ReactDOM.render(
         <App step={step}/>, document.querySelector("#root"));
-    }
+    },
+    step4: () => {
+      const step = (
+        <section className="box">
+          <Step4 />
+        </section>
+      );
+      return ReactDOM.render(
+        <App step={step}/>, document.querySelector("#root"));
+    },
   }
 }
 window
