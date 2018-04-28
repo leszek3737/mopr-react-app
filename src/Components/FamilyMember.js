@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Button from './Utils/Button';
 import Input from './Utils/Input';
-import mainData from "../data"
 import SelectOptionsItems from './Utils/SelectOptionsItems';
 
 export default class FamilyMember extends Component {
   state = {
     value: this.props.value,
+    id: this.props.id,
     kinshipDegree: 0,
   }
   actionNextStep = () => {
@@ -26,10 +26,9 @@ export default class FamilyMember extends Component {
   componentWillUnmount() {}
   render() {
     const list = this.props.list
-    console.log(list)
     return (
-      <tr>
-        <td>
+      <tr key={this.props}>
+        <td key={this.state.id}>
         <select onChange={this.handleChange}>
             <SelectOptionsItems list={list}/>
           </select>
