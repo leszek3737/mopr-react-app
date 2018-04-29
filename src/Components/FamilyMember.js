@@ -7,13 +7,6 @@ export default class FamilyMember extends Component {
     value: this.props.value,
     id: this.props.id,
   }
-  actionNextStep = () => {
-    window
-      .app
-      .view
-      .start()
-  }
-
   handleChange = (event) => {
     this.setState({
         date: event.target.date

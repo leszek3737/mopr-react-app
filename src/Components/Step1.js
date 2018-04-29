@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import SelectOptionsItems from './Utils/SelectOptionsItems';
 import Button from './Utils/Button';
 import mainData from "../data"
+import mainRender from "../index"
 import DpsInfo from "./DpsInfo"
 
 export default class Step1 extends Component {
   state = {
     value: 0,
   }
-  actionNextStep = () => {window.app.view.step2()}
+  actionNextStep = () => {mainRender("step2")}
 
   handleChange = (event) => {
     this.setState({

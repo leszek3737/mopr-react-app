@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
 import Button from './Utils/Button';
-// import Input from './Utils/Input';
+import mainRender from "../index"
 import FamilyMember from './FamilyMember';
 import mainData from "../data"
-let list = mainData.kinshipDegree
+
 export default class Step4 extends Component {
   state = {
     value: 0,
     familyMembers: [(<FamilyMember value="0" id="0" key="0" list={mainData.kinshipDegree}/>)]
   }
-  getValue() {
-    return this.state.value
-  }
-  actionNextStep = () => {
-    window
-      .app
-      .view
-      .result(true)
-  }
+  actionNextStep = () => {mainRender("result", true)}
   addFamily = () => {
     const data = this.state.value + 1
     this.setState({value: data})
     this
       .state
       .familyMembers
-      .push((<FamilyMember value={data} id={data} key={data} list={list}/>))
+      .push((<FamilyMember value={data} id={data} key={data} list={mainData.kinshipDegree}/>))
     if (data === 1) {
-      list.shift()
+      mainData.kinshipDegree.shift()
     }
   }
   delFamily = () => {
@@ -37,14 +29,12 @@ export default class Step4 extends Component {
       .familyMembers
       .pop()
     if (data === 0) {
-      list.unshift({id: 0, name: "Małżonek", mustBeUnique: true})
+      mainData.kinshipDegree.unshift({id: 0, name: "Małżonek", mustBeUnique: true})
     }
   }
   handleChange = (event) => {
     this.setState({value: event.target.value})
   }
-
-  componentWillUnmount() {}
   render() {
     return (
       <div className="step4">
@@ -62,7 +52,6 @@ export default class Step4 extends Component {
                 return x
               })}
           </tbody>
-
         </table>
         <div className="step4__btn">
           <Button className={"addFamyli"} lebel={"dodaj rodzine"} click={this.addFamily}/>

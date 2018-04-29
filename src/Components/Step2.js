@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import Button from './Utils/Button';
 import Input from './Utils/Input';
-// import mainData from "../data"
+import mainRender from "../index"
 
 export default class Step2 extends Component {
   state = {
     value: 0
   }
-  actionNextStep = () => {
-    window
-      .app 
-      .view
-      .step3()
-  }
+  actionNextStep = () => {mainRender("step3")}
 
   handleChange = (event) => {
     this.setState({value: event.target.value})

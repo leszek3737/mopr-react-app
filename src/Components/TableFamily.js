@@ -5,11 +5,10 @@ import mainData from "../data"
 export default class TableFamily extends Component {
   state = {
     value: 0,
-    famyli: this.props.famyli
+    family: this.props.family
   }
-  componentWillUnmount() {}
   render() {
-    if (this.state.famyli === true) {
+    if (this.state.family === true) {
       return (
         <table id="tableWynik">
           <tbody>
@@ -26,6 +25,8 @@ export default class TableFamily extends Component {
         </table>
       )
     }
-    else  {return null }
+    else  {
+      return null 
+    }
 }
 }
