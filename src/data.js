@@ -1,4 +1,5 @@
-export default {dps: [
+export default {
+  dps : [
     {
       id: 0,
       koszt: 4000,
@@ -13,11 +14,11 @@ export default {dps: [
       name: "DPS 3"
     }
   ],
-  incomeCriterion: {
+  incomeCriterion : {
     alone: 1902,
     family: 1542
   },
-  kinshipDegree: [
+  kinshipDegree : [
     {
       id: 0,
       name: "Małżonek",
@@ -40,4 +41,27 @@ export default {dps: [
       mustBeUnique: false
     }
   ],
+  test : {
+    cost: {
+      dps: 4000,
+      mieszkaniec: 2700,
+      gminy: 0,
+      rod: 1300
+    },
+    family: [
+      {
+        type: 0,
+        odplRo: 300,
+        ilość: 3
+      }, {
+        type: 1,
+        odplRo: 600,
+        ilość: 3
+      }, {
+        type: 1,
+        odplRo: 400,
+        ilość: 3
+      }
+    ]
+  }
 }
