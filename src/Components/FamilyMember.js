@@ -6,7 +6,6 @@ export default class FamilyMember extends Component {
   state = {
     value: this.props.value,
     id: this.props.id,
-    kinshipDegree: 0,
   }
   actionNextStep = () => {
     window

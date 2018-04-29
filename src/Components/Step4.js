@@ -3,7 +3,7 @@ import Button from './Utils/Button';
 // import Input from './Utils/Input';
 import FamilyMember from './FamilyMember';
 import mainData from "../data"
-var list = mainData.kinshipDegree
+let list = mainData.kinshipDegree
 export default class Step4 extends Component {
   state = {
     value: 0,
@@ -16,7 +16,7 @@ export default class Step4 extends Component {
     window
       .app
       .view
-      .start()
+      .result(true)
   }
   addFamily = () => {
     const data = this.state.value + 1

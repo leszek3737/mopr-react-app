@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Button from './Utils/Button';
-// import Input from './Utils/Input';
 import TabeleFamily from './TableFamily';
 import mainData from "../data"
 export default class Step4 extends Component {
