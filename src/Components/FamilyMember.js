@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Button from './Utils/Button';
 import Input from './Utils/Input';
 import SelectOptionsItems from './Utils/SelectOptionsItems';
 
@@ -27,28 +26,28 @@ export default class FamilyMember extends Component {
   render() {
     const list = this.props.list
     return (
-      <tr key={this.props}>
-        <td key={this.state.id}>
-        <select onChange={this.handleChange}>
+      <tr key={this.state.id} className="step4__tabele--tr">
+        <td className="step4__tabele--td">
+        <select className="step4__tabele--element" onChange={this.handleChange}>
             <SelectOptionsItems list={list}/>
           </select>
         </td>
-        <td>
+        <td className="step4__tabele--td">
           <Input 
+          className="step4__tabele--element"
+          type="number"
+          step="1"
             onChange={this.handleChange}/>
+            
         </td>
-        <td>
+        <td className="step4__tabele--element">
           <Input 
+          className="step4__tabele--element"
+          type="number"
+          step="0.01"
             onChange={this.handleChange}/>
-        </td>
-        <td>
-          <Button 
-          className={"removeFamilyMemberBtn"}
-          lebel={"usuń"}
-        //   click={this.actionNextStep}
-          />
         </td>
       </tr>
     );
   }
-}
+} 

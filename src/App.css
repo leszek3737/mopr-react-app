@@ -45,6 +45,11 @@ tr, th, td {
   font: inherit;
   vertical-align: baseline; }
 
+.step4__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
 .box {
   margin: 15px;
   border: 1px solid #000;
@@ -66,3 +71,9 @@ fieldset {
 
 .nextStep {
   float: right; }
+
+.step4__tabele--td {
+  width: 33%; }
+
+.step4__tabele--element {
+  width: 90%; }
