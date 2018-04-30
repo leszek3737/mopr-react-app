@@ -9,7 +9,9 @@ export default class Step4 extends Component {
     value: 0,
     familyMembers: [(<FamilyMember value="0" id="0" key="0" list={mainData.kinshipDegree}/>)]
   }
-  actionNextStep = () => {mainRender("result", true)}
+  actionNextStep = () => {
+    mainRender("result", true)
+  }
   addFamily = () => {
     const data = this.state.value + 1
     this.setState({value: data})
@@ -18,7 +20,9 @@ export default class Step4 extends Component {
       .familyMembers
       .push((<FamilyMember value={data} id={data} key={data} list={mainData.kinshipDegree}/>))
     if (data === 1) {
-      mainData.kinshipDegree.shift()
+      mainData
+        .kinshipDegree
+        .shift()
     }
   }
   delFamily = () => {
@@ -29,7 +33,9 @@ export default class Step4 extends Component {
       .familyMembers
       .pop()
     if (data === 0) {
-      mainData.kinshipDegree.unshift({id: 0, name: "Małżonek", mustBeUnique: true})
+      mainData
+        .kinshipDegree
+        .unshift({id: 0, name: "Małżonek", mustBeUnique: true})
     }
   }
   handleChange = (event) => {

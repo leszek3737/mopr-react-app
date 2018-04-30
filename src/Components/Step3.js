@@ -9,7 +9,7 @@ export default class Step3 extends Component {
   }
   actionNextStep = () => {
     if (this.state.value === "0") {
-      mainRender("result",false)
+      mainRender("result", false)
     } else {
       mainRender("step4")
     }

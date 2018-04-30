@@ -3,11 +3,11 @@ import mainData from "../data"
 
 export default class RowFamily extends Component {
   state = {
-    data: this.props.data,
+    data: this.props.data
   }
   componentWillUnmount() {}
   render() {
-     const data= this.state.data
+    const data = this.state.data
     return (
       <tr key={data.id}>
         <td className="wynikRodzaj">{mainData.kinshipDegree[data.type].name}</td>

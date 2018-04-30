@@ -18,15 +18,17 @@ export default class TableFamily extends Component {
               <th>łączny przychód gospodarstwa domowego</th>
               <th>Odpłatność</th>
             </tr>
-            {mainData.test.family.map((data, key)=>{
-                return(<RowFamily data={data} key={key} />)
-            })}
+            {mainData
+              .test
+              .family
+              .map((data, key) => {
+                return (<RowFamily data={data} key={key}/>)
+              })}
           </tbody>
         </table>
       )
+    } else {
+      return null
     }
-    else  {
-      return null 
-    }
-}
+  }
 }

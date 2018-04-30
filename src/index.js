@@ -6,10 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 export default function mainRender(type, family) {
   return ReactDOM.render(
-    <App 
-      type={type} 
-      family={family}/>,
-       document.querySelector("#root"));
+    <App type={type} family={family}/>, document.querySelector("#root"));
 }
 
 mainRender("start");

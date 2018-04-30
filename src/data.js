@@ -50,21 +50,21 @@ export default {
     },
     family: [
       {
-        id:0,
+        id: 0,
         type: 0,
-        doch:6000,
+        doch: 6000,
         odplRo: 300,
         ilość: 3
       }, {
-        id:1,        
+        id: 1,
         type: 1,
-        doch:5000,
+        doch: 5000,
         odplRo: 600,
         ilość: 2
       }, {
-        id:2,        
+        id: 2,
         type: 1,
-        doch:4000,
+        doch: 4000,
         odplRo: 400,
         ilość: 1
       }

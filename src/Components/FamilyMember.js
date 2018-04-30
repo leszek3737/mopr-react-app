@@ -13,8 +13,6 @@ export default class FamilyMember extends Component {
       })
     console.log(this.state.data)
   }
-
-  componentWillUnmount() {}
   render() {
     const list = this.props.list
     return (

@@ -7,27 +7,23 @@ import DpsInfo from "./DpsInfo"
 
 export default class Step1 extends Component {
   state = {
-    value: 0,
+    value: 0
   }
-  actionNextStep = () => {mainRender("step2")}
-
+  actionNextStep = () => {
+    mainRender("step2")
+  }
   handleChange = (event) => {
-    this.setState({
-      value: event.target.value
-    })
+    this.setState({value: event.target.value})
   }
-  componentWillUnmount(){
-//    mainData.odp.cost.dps = mainData.dps[this.state.value].koszt
-   }
   render() {
     let data = {
       dpsList: mainData.dps,
       button: {
         className: "nextStep",
         lebel: "dalej",
-        click: this.actionNextStep,
+        click: this.actionNextStep
       },
-      legend: "Wybierz dom pomocy społecznej",
+      legend: "Wybierz dom pomocy społecznej"
     }
     return (
       <div className="step1">
@@ -37,13 +33,12 @@ export default class Step1 extends Component {
           <select className="dps" onChange={this.handleChange}>
             <SelectOptionsItems list={data.dpsList}/>
           </select>
-
         </fieldset>
         <Button
           className={data.button.className}
           lebel={data.button.lebel}
           click={data.button.click}/>
-         <DpsInfo value={this.state.value}/>
+        <DpsInfo value={this.state.value}/>
       </div>
     );
   }

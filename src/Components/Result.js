@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import TabeleFamily from './TableFamily';
-import mainData from "../data"
+import mainData from "../data";
+
 export default class Step4 extends Component {
   state = {
     value: 0,
-    family: this.props.family    
-}
+    family: this.props.family
+  }
   getValue() {
     return this.state.value
   }
@@ -23,7 +24,7 @@ export default class Step4 extends Component {
               Odpłatność mieszkańca</h5>
             <p id="costMieszkaniec">{mainData.test.cost.mieszkaniec}</p>
           </div>
-                <TabeleFamily family={this.state.family}/>
+          <TabeleFamily family={this.state.family}/>
           <div>
             <h5>
               odpłatność gminy</h5>
