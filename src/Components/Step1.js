@@ -38,7 +38,7 @@ export default class Step1 extends Component {
           className={data.button.className}
           lebel={data.button.lebel}
           click={data.button.click}/>
-        <DpsInfo value={this.state.value}/>
+        <DpsInfo data={mainData.dps} value={this.state.value}/>
       </div>
     );
   }
