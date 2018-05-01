@@ -1,16 +1,15 @@
-import React, {Component} from 'react'
-export default class Input extends Component {
-  render(data = this.props) {
-    return React.createElement("input", {
-      type: data.type,
-      step: data.step,
-      onChange: data.onChange,
-      className: data.className,
-      id: data.id,
-      value: data.value,
-      name: data.name,
-      onClick: data.click,
-      defaultChecked: data.checked
-    }, data.lebel)
-  }
+import React from 'react'
+const Imput = (props) => {
+  return React.createElement("input", {
+    type: props.type,
+    step: props.step,
+    onChange: props.onChange,
+    className: props.className,
+    id: props.id,
+    value: props.value,
+    name: props.name,
+    onClick: props.click,
+    defaultChecked: props.checked
+  }, props.lebel)
 }
+export default Imput

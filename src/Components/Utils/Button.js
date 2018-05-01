@@ -1,11 +1,10 @@
-import React, {Component} from 'react'
-export default class Button extends Component {
-  render(data = this.props) {
-    return React.createElement("button", {
-      className: data.className,
-      id: data.id,
-      value: data.value,
-      onClick: data.click
-    }, data.lebel)
-  }
+import React from 'react'
+const Button = (props) => {
+  return React.createElement("button", {
+    className: props.className,
+    id: props.id,
+    value: props.value,
+    onClick: props.click
+  }, props.lebel)
 }
+export default Button
