@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Button from './Utils/Button';
 import Input from './Utils/Input';
 import mainRender from "../index"
+import store from "./store"
 
 export default class Step2 extends Component {
   state = {
@@ -9,6 +10,7 @@ export default class Step2 extends Component {
   }
   actionNextStep = () => {
     mainRender("step3")
+    store.inhabitant = this.state.value;
   }
 
   handleChange = (event) => {
