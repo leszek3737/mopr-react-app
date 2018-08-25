@@ -4,12 +4,14 @@ import Button from './Utils/Button';
 import mainData from "../data"
 import mainRender from "../index"
 import DpsInfo from "./DpsInfo"
+import store from "./store"
 
 export default class Step1 extends Component {
   state = {
     value: 0
   }
   actionNextStep = () => {
+    store.dps = this.state.value
     mainRender("step2")
   }
   handleChange = (event) => {

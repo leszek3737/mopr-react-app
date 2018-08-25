@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Step1 from "./Components/Step1"
 import Step2 from "./Components/Step2"
@@ -6,7 +6,7 @@ import Step3 from "./Components/Step3"
 import Step4 from "./Components/Step4"
 import Result from "./Components/Result"
 
-export default class App extends React.Component {
+export default class App extends Component {
   state = {
     start: (
       <section className="box">
