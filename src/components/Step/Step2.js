@@ -32,8 +32,7 @@ export default class Step2 extends Component {
         this.props.changeState({inhabitant:this.state.value});
     }    
     actionNextStep = () => {
-        // this.props.changeState({value:0});
-        this.props.changeState({inhabitant:this.state.value});
+        this.props.changeState({value:2});
       }
       componentWillUnmount(){
         this.props.changeState({inhabitant:this.state.value});
