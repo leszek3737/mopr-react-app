@@ -50,6 +50,7 @@ export default class Step2 extends Component {
                 onChange={this.handleChange}/>
             </fieldset>
             <Button
+            kind="button"
               className={this.state.data.button.className}
               lebel={this.state.data.button.lebel}
               click={this.state.data.button.click}/>

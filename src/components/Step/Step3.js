@@ -32,7 +32,7 @@ export default class Step3 extends Component {
     }    
     actionNextStep = () => {
         if (this.state.hasfamily === "true"){
-            this.props.changeState({value:0})
+            this.props.changeState({value:3})
         } else {
             this.props.changeState({value:1})
         }
@@ -63,6 +63,7 @@ export default class Step3 extends Component {
                   onChange={this.handleChange}/>
                 tak
                 <Button
+                kind="button"
                   className={this.state.data.button.className}
                   lebel={this.state.data.button.lebel}
                   click={this.state.data.button.click}/>

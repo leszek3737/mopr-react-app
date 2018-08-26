@@ -39,6 +39,7 @@ export default class Start extends Component {
             </select>
             </fieldset>
             <Button
+            kind="button"
             className={this.state.data.button.className}
             lebel={this.state.data.button.lebel}
             click={this.state.data.button.click}/>
