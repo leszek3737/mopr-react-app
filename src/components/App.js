@@ -1,36 +1,12 @@
 import React, { Component } from 'react'
 import Start from "./Step/Start"
+import Step2 from "./Step/Step2"
 
 export default class App extends Component {
   constructor() {
       super()
       this.state = {
-        render: {
-            start: (date, changeState)=>{
-                return <Start dps={date} changeState={changeState}/>   
-            }
-            // step2: (
-            //   <section className="box"><Step2/>
-            //   </section>
-            // ),
-            // step3: (
-            //   <section className="box">
-            //     <Step3/>
-            //   </section>
-            // ),
-            // step4: (
-            //   <section className="box">
-            //     <Step4/>
-            //   </section>
-            // ),
-            // result: (family) => {
-            //   return (
-            //     <section className="box">
-            //       <Result family={family}/>
-            //     </section>
-            //   )
-            // }
-        },
+        value: 0,
         date:{
             dps : [
                 {
@@ -48,40 +24,25 @@ export default class App extends Component {
                 }
               ],
         },
-        store:{
-            dps: 0,
-        }
+        dps:0,
+        inhabitant:0,
     }
   }
-    changeState = (dps)=>{
-        this.setState({
-            store: {
-                dps: dps
-            }
-        })
+    changeState = (data)=>{
+        this.setState(data)
     }   
   render() {
-    const content = (type) => {
-        switch (type) {
-        case "start":
-          return this.state.render.start(this.state.date.dps, this.changeState);
-        // case "step2":
-        //   return this.state.render.step2;
-        // case "step3":
-        //   return this.state.render.step3;
-        // case "step4":
-        //   return this.state.render.step4;
-        // case "result":
-        //   return this
-        //     .state
-        //     .render
-        //     .result(this.props.family);
-        default:
-          return null
-      }}
+    const content = [
+        ()=>{
+            return <Start dps={this.state.date.dps} changeState={this.changeState}/>   
+        },
+        ()=>{
+            return <Step2 changeState={this.changeState}/>
+        },
+    ]
     return (
         <section className="box">
-            {content(this.props.type)}
+            {content[this.state.value]()}
         </section>
     )
   }

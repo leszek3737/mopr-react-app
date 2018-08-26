@@ -23,10 +23,10 @@ export default class Start extends Component {
         this.setState({value: event.target.value});
     }    
     actionNextStep = () => {
-        console.log(this.props)
+        this.props.changeState({value:1});
       }
       componentWillUnmount(){
-        this.props.changeState(this.state.value)
+        this.props.changeState({dps:this.state.value});
       }
     render() {
         return (
