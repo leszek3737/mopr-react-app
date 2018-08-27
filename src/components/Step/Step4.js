@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Button from '../Utils/Button';
 import Input from '../Utils/Input';
 import SelectOptionsItems from '../Utils/SelectOptionsItems';
+import FamilyMember from "../Tools/FamilyMember";
 
 export default class Step4 extends Component {
     constructor(){
@@ -29,15 +30,24 @@ export default class Step4 extends Component {
             families: [...this.state.families, family]
         })
     }
+    delFamily = (index)=>{
+        const list =  this.state.families.slice();
+        list.splice(index.target.id, 1);
+        this.setState({
+            families: list
+        })
+        this.render()
+    }
     handleChange = (event)=>{
         this.setState({
             [event.target.name]:event.target.value
         })
     }    
     actionNextStep = () => {
-            this.props.changeState({value:0})
+            this.props.changeState({value:2})
       }
     componentWillUnmount(){
+        this.props.changeState({families:this.state.families});
           }
     render() {
         const list = ()=> {
@@ -53,13 +63,9 @@ export default class Step4 extends Component {
               <th className="step4__tabele--th">łączny przychód gospodarstwa domowego</th>
               <th></th>
             </tr>
-             {//this
-            //   .state
-            //   .familyMembers
-            //   .map((x) => {
-            //     return x
-            //   })
-        }
+            {this.state.families.map((x, i)=>{
+                return (<FamilyMember key={i} id={i} data={x} list={this.props.kinshipDegree} delFamily={this.delFamily} />)
+            })}
           </tbody>
         </table>
         <form>

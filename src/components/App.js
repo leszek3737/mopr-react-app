@@ -52,7 +52,7 @@ export default class App extends Component {
         dps:0,
         inhabitant:0,
         hasfamily: false,
-        family:[],
+        families:[],
     }
   }
     changeState = (data)=>{
